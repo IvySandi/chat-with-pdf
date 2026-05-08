@@ -11,9 +11,4 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 GEMINI_CHAT_MODEL = os.getenv("GEMINI_CHAT_MODEL", "gemini-1.5-flash")
 GEMINI_EMBEDDING_MODEL = os.getenv("GEMINI_EMBEDDING_MODEL", "models/gemini-embedding-001")
-PGVECTOR_DSN = os.getenv(
-    "PGVECTOR_DSN",
-    "postgresql://postgres:postgres@localhost:5431/chat_with_pdf",
-)
-
-
+PGVECTOR_DSN = os.getenv("PGVECTOR_DSN", os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5431/chat_with_pdf"))
